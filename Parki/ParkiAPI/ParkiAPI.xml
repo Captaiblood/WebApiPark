@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ParkiAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ParkiAPI.Controllers.NationalParkController.Get">
+            <summary>
+            Get List of National Parks
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.NationalParkController.Get(System.Int32)">
+            <summary>
+            Get individual national park
+            </summary>
+            <param name="NationalParkId"></param> Id of national park
+            <returns></returns>       
+        </member>
+        <member name="M:ParkiAPI.Controllers.NationalParkController.CreatenationalPark(ParkiAPI.Dtos.NationalParkDto)">
+            <summary>
+            Create a new national park.
+            </summary>
+            <param name="nationalParkDto"></param> National park json
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.NationalParkController.UpdateNationalPark(System.Int32,ParkiAPI.Dtos.NationalParkDto)">
+            <summary>
+            Update national park
+            </summary>
+            <param name="NationalParkId"></param> National Park Id
+            <param name="nationalParkDto"></param> National park json
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.NationalParkController.DeleteNationalPark(System.Int32)">
+            <summary>
+            Delete National Park
+            </summary>
+            <param name="nationalParkId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.NationalParkV2Controller.Get">
+            <summary>
+            Get List of National Parks
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.TrailController.Get">
+            <summary>
+            Get List of  Trails
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.TrailController.Get(System.Int32)">
+            <summary>
+            Get individual  Trail
+            </summary>
+            <param name="TrailId"></param> Id of  Trail
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.TrailController.CreateTrail(ParkiAPI.Dtos.TrailCreateDto)">
+            <summary>
+            Create a new  Trail.
+            </summary>
+            <param name="TrailDto"></param>  Trail json
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.TrailController.UpdateTrail(System.Int32,ParkiAPI.Dtos.TrailUpdateDto)">
+            <summary>
+            Update  Trail
+            </summary>
+            <param name="TrailId"></param>  Trail Id
+            <param name="TrailDto"></param>  Trail json
+            <returns></returns>
+        </member>
+        <member name="M:ParkiAPI.Controllers.TrailController.DeleteTrail(System.Int32)">
+            <summary>
+            Delete  Trail
+            </summary>
+            <param name="TrailId"></param>  Trail Id      
+            <returns></returns>
+        </member>
+        <member name="T:Service.Library.ServiceResponder.ServiceResponse`1">
+            <summary>
+            Generic raper around web api serivice responce.
+            to help front end to revieve service response.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+    </members>
+</doc>

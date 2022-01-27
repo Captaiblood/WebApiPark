@@ -1,0 +1,71 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+namespace ParkiAPI.Migrations
+{
+    public partial class TrailTable : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropPrimaryKey(
+                name: "PK_nationalParks",
+                table: "nationalParks");
+
+            migrationBuilder.RenameTable(
+                name: "nationalParks",
+                newName: "NationalParks");
+
+            migrationBuilder.AddPrimaryKey(
+                name: "PK_NationalParks",
+                table: "NationalParks",
+                column: "Id");
+
+            migrationBuilder.CreateTable(
+                name: "Trails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Distance = table.Column<double>(type: "float", nullable: false),
+                    Difficulty = table.Column<int>(type: "int", nullable: false),
+                    NationalParkID = table.Column<int>(type: "int", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Trails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Trails_NationalParks_NationalParkID",
+                        column: x => x.NationalParkID,
+                        principalTable: "NationalParks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Trails_NationalParkID",
+                table: "Trails",
+                column: "NationalParkID");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Trails");
+
+            migrationBuilder.DropPrimaryKey(
+                name: "PK_NationalParks",
+                table: "NationalParks");
+
+            migrationBuilder.RenameTable(
+                name: "NationalParks",
+                newName: "nationalParks");
+
+            migrationBuilder.AddPrimaryKey(
+                name: "PK_nationalParks",
+                table: "nationalParks",
+                column: "Id");
+        }
+    }
+}
